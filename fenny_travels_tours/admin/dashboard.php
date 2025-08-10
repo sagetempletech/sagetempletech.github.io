@@ -21,6 +21,9 @@ $contacts = array_filter($files, function($f){ return strpos($f, 'contact_') !==
     <a class="btn btn-outline-primary" href="/admin/content.php">Content</a>
     <a class="btn btn-outline-primary" href="/admin/notifications.php">Notifications</a>
     <a class="btn btn-outline-secondary" href="/admin/media.php">Media</a>
+    <a class="btn btn-outline-secondary" href="/admin/destinations.php">Featured Destinations</a>
+    <a class="btn btn-outline-secondary" href="/admin/services_manage.php">Services</a>
+    <a class="btn btn-outline-secondary" href="/admin/contact_settings.php">Contact Page</a>
   </div>
 </section>
 <?php include __DIR__ . '/../partials/footer.php'; ?>
