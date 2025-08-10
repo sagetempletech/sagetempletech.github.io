@@ -29,6 +29,13 @@ foreach (['logo','favicon','hero','team','hotel'] as $k) {
     handle_upload($k, $media, $uploadDir);
 }
 
+if (isset($_POST['logo_height'])) {
+    $h = (int) $_POST['logo_height'];
+    if ($h < 20) { $h = 20; }
+    if ($h > 96) { $h = 96; }
+    $media['logo_height'] = $h;
+}
+
 $opts['media'] = $media;
 save_options($opts);
 redirect('/admin/media.php');

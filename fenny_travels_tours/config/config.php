@@ -46,7 +46,8 @@ function read_options(): array {
                 'favicon' => '/assets/images/favicon.svg',
                 'hero' => '/assets/images/hero.svg',
                 'team' => '/assets/images/team.svg',
-                'hotel' => '/assets/images/hotel.svg'
+                'hotel' => '/assets/images/hotel.svg',
+                'logo_height' => 36
             ],
             'admin' => [
                 'email' => 'admin@local',

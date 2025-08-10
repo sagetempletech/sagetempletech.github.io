@@ -34,6 +34,11 @@ $media = get_option('media');
       <input type="file" class="form-control" name="hotel" accept="image/*" />
       <div class="small mt-1">Current: <code><?php echo e($media['hotel'] ?? ''); ?></code></div>
     </div>
+    <div class="col-md-6">
+      <label class="form-label">Logo Height (px)</label>
+      <input type="number" class="form-control" name="logo_height" min="20" max="96" value="<?php echo e((int)($media['logo_height'] ?? 36)); ?>" />
+      <div class="form-text">Navbar renders the logo at this height.</div>
+    </div>
     <div class="col-12">
       <button class="btn btn-gold">Upload & Save</button>
     </div>
