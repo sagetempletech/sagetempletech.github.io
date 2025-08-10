@@ -28,7 +28,8 @@ function read_options(): array {
                 'accent' => '#87CEFA',
                 'bg_light' => '#F5F9FF',
                 'heading_font' => 'Poppins',
-                'body_font' => 'Open Sans'
+                'body_font' => 'Open Sans',
+                'mode' => 'light'
             ],
             'flight' => [
                 'provider' => 'mock',
@@ -40,12 +41,21 @@ function read_options(): array {
                 'email' => 'admin@example.com',
                 'sms' => ''
             ],
+            'media' => [
+                'logo' => '/assets/images/logo.svg',
+                'favicon' => '/assets/images/favicon.svg',
+                'hero' => '/assets/images/hero.svg',
+                'team' => '/assets/images/team.svg',
+                'hotel' => '/assets/images/hotel.svg'
+            ],
             'admin' => [
                 'email' => 'admin@local',
                 // password: admin123
                 'password_hash' => password_hash('admin123', PASSWORD_DEFAULT)
             ],
             'content' => [
+                'home_hero_title' => 'Fly Smarter with <span style="color: var(--secondary);">Fenny</span> — Your Journey Starts Here',
+                'home_hero_subtitle' => 'Domestic & international flights, hotels, visas and travel insurance backed by real experts.',
                 'about' => 'We provide domestic and international flight booking, consultancy, hotels, visas, and insurance. Enjoy seamless, affordable travel experiences with us.',
                 'services' => [
                     ['title' => 'Air Ticket Booking', 'desc' => 'Domestic and international tickets with flexible options and competitive fares.'],

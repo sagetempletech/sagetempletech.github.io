@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '/services/helpers.php';
 require_once __DIR__ . '/services/flight_api.php';
+$heroTitle = get_option('content.home_hero_title', 'Fly Smarter with <span style="color: var(--secondary);">Fenny</span> — Your Journey Starts Here');
+$heroSubtitle = get_option('content.home_hero_subtitle', 'Domestic & international flights, hotels, visas and travel insurance backed by real experts.');
 ?>
 <?php include __DIR__ . '/partials/head.php'; ?>
 <?php include __DIR__ . '/partials/navbar.php'; ?>
@@ -10,8 +12,8 @@ require_once __DIR__ . '/services/flight_api.php';
   <div class="overlay" aria-hidden="true"></div>
   <div class="content container" data-aos="fade-up">
     <span class="badge badge-glass mb-3 px-3 py-2 fw-semibold">Seamless · Enjoyable · Affordable</span>
-    <h1>Fly Smarter with <span style="color: var(--secondary);">Fenny</span> — Your Journey Starts Here</h1>
-    <p class="lead mt-2">Domestic & international flights, hotels, visas and travel insurance backed by real experts.</p>
+    <h1><?php echo $heroTitle; ?></h1>
+    <p class="lead mt-2"><?php echo e($heroSubtitle); ?></p>
     <a href="#search" class="btn btn-gold btn-lg mt-3 glow-hover">Search Flights</a>
   </div>
 </header>

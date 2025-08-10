@@ -45,6 +45,21 @@ $flight = get_option('flight');
       <label class="form-label">BG Light</label>
       <input type="color" class="form-control form-control-color" name="bg_light" value="<?php echo e($theme['bg_light']); ?>" />
     </div>
+    <div class="col-md-4">
+      <label class="form-label">Theme Mode</label>
+      <select class="form-select" name="mode">
+        <option value="light" <?php if(($theme['mode'] ?? 'light')==='light') echo 'selected'; ?>>Light</option>
+        <option value="dark" <?php if(($theme['mode'] ?? 'light')==='dark') echo 'selected'; ?>>Dark</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Heading Font</label>
+      <input class="form-control" name="heading_font" value="<?php echo e($theme['heading_font']); ?>" placeholder="e.g. Poppins" />
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Body Font</label>
+      <input class="form-control" name="body_font" value="<?php echo e($theme['body_font']); ?>" placeholder="e.g. Open Sans" />
+    </div>
 
     <h5 class="mt-4">Flight Search</h5>
     <div class="col-md-4">
@@ -67,6 +82,7 @@ $flight = get_option('flight');
 
     <div class="col-12">
       <button class="btn btn-gold">Save</button>
+      <a class="btn btn-outline-secondary ms-2" href="/admin/media.php">Manage Media</a>
     </div>
   </form>
 </section>

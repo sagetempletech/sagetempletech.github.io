@@ -1,8 +1,8 @@
-<?php $biz = get_option('business'); ?>
+<?php $biz = get_option('business'); $media = get_option('media'); ?>
 <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top nav-glass">
   <div class="container">
     <a class="navbar-brand fw-bold" href="/index.php">
-      <img src="/assets/images/logo.svg" alt="Logo" height="36" class="me-2" />
+      <img src="<?php echo e($media['logo'] ?? '/assets/images/logo.svg'); ?>" alt="Logo" height="36" class="me-2" />
       <?php echo e($biz['name']); ?>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">

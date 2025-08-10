@@ -9,6 +9,15 @@ $opts = read_options();
   <h3 class="section-title">Content Management</h3>
 
   <form method="post" action="/admin/save_settings.php" class="mb-5">
+    <input type="hidden" name="section" value="home" />
+    <div class="mb-2"><label class="form-label">Home Hero Title (HTML allowed)</label></div>
+    <input class="form-control mb-3" name="home_hero_title" value="<?php echo e($opts['content']['home_hero_title']); ?>" />
+    <div class="mb-2"><label class="form-label">Home Hero Subtitle</label></div>
+    <textarea class="form-control" name="home_hero_subtitle" rows="2"><?php echo e($opts['content']['home_hero_subtitle']); ?></textarea>
+    <button class="btn btn-gold mt-2">Save Home</button>
+  </form>
+
+  <form method="post" action="/admin/save_settings.php" class="mb-5">
     <input type="hidden" name="section" value="about" />
     <div class="mb-2"><label class="form-label">About Us</label></div>
     <textarea class="form-control" name="about" rows="5"><?php echo e($opts['content']['about']); ?></textarea>

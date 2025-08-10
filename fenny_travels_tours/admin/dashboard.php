@@ -4,8 +4,8 @@ session_start(); if (!isset($_SESSION['admin'])) { header('Location: /admin/logi
 
 $requestsDir = storage_path('requests');
 $files = glob($requestsDir . '/*.json');
-$bookings = array_filter($files, fn($f) => str_contains($f, 'booking_'));
-$contacts = array_filter($files, fn($f) => str_contains($f, 'contact_'));
+$bookings = array_filter($files, function($f){ return strpos($f, 'booking_') !== false; });
+$contacts = array_filter($files, function($f){ return strpos($f, 'contact_') !== false; });
 ?>
 <?php include __DIR__ . '/../partials/head.php'; ?>
 <?php include __DIR__ . '/../partials/navbar.php'; ?>
@@ -16,10 +16,11 @@ $contacts = array_filter($files, fn($f) => str_contains($f, 'contact_'));
     <div class="col-md-4"><div class="neu p-4 text-center"><div class="display-5 fw-bold"><?php echo count($contacts); ?></div><div>Contact Messages</div></div></div>
     <div class="col-md-4"><div class="neu p-4 text-center"><div class="display-5 fw-bold">1</div><div>Active Admin</div></div></div>
   </div>
-  <div class="mt-4">
-    <a class="btn btn-primary me-2" href="/admin/settings.php">General Settings</a>
-    <a class="btn btn-outline-primary me-2" href="/admin/content.php">Content</a>
+  <div class="mt-4 d-flex flex-wrap gap-2">
+    <a class="btn btn-primary" href="/admin/settings.php">General Settings</a>
+    <a class="btn btn-outline-primary" href="/admin/content.php">Content</a>
     <a class="btn btn-outline-primary" href="/admin/notifications.php">Notifications</a>
+    <a class="btn btn-outline-secondary" href="/admin/media.php">Media</a>
   </div>
 </section>
 <?php include __DIR__ . '/../partials/footer.php'; ?>

@@ -6,7 +6,6 @@ function fetch_view_only_flights(array $criteria): array {
     $provider = get_option('flight.provider', 'mock');
     $apiKey = get_option('flight.api_key', '');
 
-    // Example: switch over providers (mock only for now)
     switch ($provider) {
         default:
             return mock_flight_results($criteria);

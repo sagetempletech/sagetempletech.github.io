@@ -17,6 +17,16 @@ switch ($section) {
     $opts['theme']['secondary'] = $_POST['secondary'] ?? $opts['theme']['secondary'];
     $opts['theme']['accent'] = $_POST['accent'] ?? $opts['theme']['accent'];
     $opts['theme']['bg_light'] = $_POST['bg_light'] ?? $opts['theme']['bg_light'];
+    $opts['theme']['mode'] = $_POST['mode'] ?? ($opts['theme']['mode'] ?? 'light');
+    $opts['theme']['heading_font'] = $_POST['heading_font'] ?? $opts['theme']['heading_font'];
+    $opts['theme']['body_font'] = $_POST['body_font'] ?? $opts['theme']['body_font'];
+    break;
+  case 'home':
+    $opts['content']['home_hero_title'] = $_POST['home_hero_title'] ?? $opts['content']['home_hero_title'];
+    $opts['content']['home_hero_subtitle'] = $_POST['home_hero_subtitle'] ?? $opts['content']['home_hero_subtitle'];
+    break;
+  case 'about':
+    $opts['content']['about'] = $_POST['about'] ?? $opts['content']['about'];
     break;
   case 'faq':
     $data = json_decode($_POST['faq'] ?? '[]', true);

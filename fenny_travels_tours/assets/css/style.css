@@ -165,3 +165,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .rating .star { color: #f3b600; }
+
+/* Dark theme overrides */
+.theme-dark {
+  color: #e6e8ef;
+  background: linear-gradient(135deg, #0e1322 0%, #111626 40%, #0b111f 100%);
+}
+.theme-dark .nav-glass { background: rgba(6, 10, 22, 0.85); border-bottom-color: rgba(255,255,255,0.06); }
+.theme-dark .nav-glass.scrolled { background: rgba(6, 10, 22, 0.95); }
+.theme-dark .card-glass { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.08); }
+.theme-dark .footer-glass { background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); border-top-color: rgba(255,255,255,0.08); }
+.theme-dark .badge-glass { background: rgba(255, 255, 255, 0.12); color: #e6e8ef; border-color: rgba(255,255,255,0.18); }
+.theme-dark .accordion-button:not(.collapsed) { background-color: rgba(255,255,255,0.06); color: #e6e8ef; }
+.theme-dark .neu { background: linear-gradient(145deg, #10172b, #0c1223); box-shadow: 20px 20px 60px #0a0f1e, -20px -20px 60px #121a32; }
