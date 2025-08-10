@@ -49,6 +49,12 @@ function read_options(): array {
                 'hotel' => '/assets/images/hotel.svg',
                 'logo_height' => 36
             ],
+            'currency' => [
+                'base' => 'USD',
+                'auto' => true,
+                'fallback' => 'USD',
+                'supported' => ['USD','NGN','GBP','EUR','AED','GHS','KES','ZAR']
+            ],
             'admin' => [
                 'email' => 'admin@local',
                 // password: admin123

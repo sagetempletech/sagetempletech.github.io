@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../config/config.php';
+if (session_status() !== PHP_SESSION_ACTIVE) { @session_start(); }
 
 function is_post(): bool { return $_SERVER['REQUEST_METHOD'] === 'POST'; }
 function is_get(): bool { return $_SERVER['REQUEST_METHOD'] === 'GET'; }
@@ -26,4 +27,17 @@ function storage_path(string $relative): string {
 function write_log(string $file, string $message): void {
     $path = storage_path('logs/' . $file);
     @file_put_contents($path, '[' . date('c') . "] " . $message . "\n", FILE_APPEND);
+}
+
+require_once __DIR__ . '/currency.php';
+
+function current_currency_code(): string {
+    return currency_get_target();
+}
+
+function format_price_converted(float $amount, string $fromCode = null): string {
+    $from = $fromCode ?: get_option('currency.base', 'USD');
+    $to = current_currency_code();
+    $value = currency_convert_amount($amount, $from, $to);
+    return currency_format_amount($value, $to);
 }
