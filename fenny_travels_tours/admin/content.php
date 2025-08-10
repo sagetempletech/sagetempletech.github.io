@@ -1,0 +1,53 @@
+<?php
+require_once __DIR__ . '/../services/helpers.php';
+session_start(); if (!isset($_SESSION['admin'])) { header('Location: /admin/login.php'); exit; }
+$homeTitle = get_option('content.home_hero_title', 'Fly Smarter with <span style="color: var(--secondary);">Fenny</span> — Your Journey Starts Here');
+$homeSubtitle = get_option('content.home_hero_subtitle', 'Domestic & international flights, hotels, visas and travel insurance backed by real experts.');
+$aboutText = get_option('content.about', '');
+$faqData = get_option('content.faq', []);
+$testimonialsData = get_option('content.testimonials', []);
+$destinationsData = get_option('content.destinations', []);
+?>
+<?php include __DIR__ . '/../partials/head.php'; ?>
+<?php include __DIR__ . '/../partials/navbar.php'; ?>
+<section class="container py-5">
+  <h3 class="section-title">Content Management</h3>
+
+  <form method="post" action="/admin/save_settings.php" class="mb-5">
+    <input type="hidden" name="section" value="home" />
+    <div class="mb-2"><label class="form-label">Home Hero Title (HTML allowed)</label></div>
+    <input class="form-control mb-3" name="home_hero_title" value="<?php echo e($homeTitle); ?>" />
+    <div class="mb-2"><label class="form-label">Home Hero Subtitle</label></div>
+    <textarea class="form-control" name="home_hero_subtitle" rows="2"><?php echo e($homeSubtitle); ?></textarea>
+    <button class="btn btn-gold mt-2">Save Home</button>
+  </form>
+
+  <form method="post" action="/admin/save_settings.php" class="mb-5">
+    <input type="hidden" name="section" value="about" />
+    <div class="mb-2"><label class="form-label">About Us</label></div>
+    <textarea class="form-control" name="about" rows="5"><?php echo e($aboutText); ?></textarea>
+    <button class="btn btn-gold mt-2">Save About</button>
+  </form>
+
+  <form method="post" action="/admin/save_settings.php" class="mb-5">
+    <input type="hidden" name="section" value="faq" />
+    <div class="mb-2"><label class="form-label">FAQ (JSON Array)</label></div>
+    <textarea class="form-control" name="faq" rows="8"><?php echo e(json_encode($faqData, JSON_PRETTY_PRINT)); ?></textarea>
+    <button class="btn btn-gold mt-2">Save FAQ</button>
+  </form>
+
+  <form method="post" action="/admin/save_settings.php" class="mb-5">
+    <input type="hidden" name="section" value="testimonials" />
+    <div class="mb-2"><label class="form-label">Testimonials (JSON Array)</label></div>
+    <textarea class="form-control" name="testimonials" rows="8"><?php echo e(json_encode($testimonialsData, JSON_PRETTY_PRINT)); ?></textarea>
+    <button class="btn btn-gold mt-2">Save Testimonials</button>
+  </form>
+
+  <form method="post" action="/admin/save_settings.php" class="mb-5">
+    <input type="hidden" name="section" value="destinations" />
+    <div class="mb-2"><label class="form-label">Featured Destinations (JSON Array)</label></div>
+    <textarea class="form-control" name="destinations" rows="8"><?php echo e(json_encode($destinationsData, JSON_PRETTY_PRINT)); ?></textarea>
+    <button class="btn btn-gold mt-2">Save Destinations</button>
+  </form>
+</section>
+<?php include __DIR__ . '/../partials/footer.php'; ?>
