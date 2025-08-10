@@ -1,0 +1,120 @@
+{
+    "business": {
+        "name": "Fenny Travels & Tours",
+        "address": "19, Durban Street, Off Ademolade Tokunbo, Wuse 2, Abuja, Nigeria",
+        "phone": "0706 054 6145",
+        "email": "admin@example.com"
+    },
+    "theme": {
+        "primary": "#004AAD",
+        "secondary": "#FFD700",
+        "accent": "#87CEFA",
+        "bg_light": "#F5F9FF",
+        "heading_font": "Poppins",
+        "body_font": "Open Sans"
+    },
+    "flight": {
+        "provider": "mock",
+        "api_key": "",
+        "enabled_trip_types": [
+            "oneway",
+            "round",
+            "multicity"
+        ],
+        "enabled_classes": [
+            "economy",
+            "business",
+            "first"
+        ]
+    },
+    "notifications": {
+        "email": "admin@example.com",
+        "sms": ""
+    },
+    "admin": {
+        "email": "admin@local",
+        "password_hash": "$2y$12$fu5\/NROiOqGxbvlScD9wM.rnyjRCHQPBtNIXHBIi8ZlGO2MYQoLHi"
+    },
+    "content": {
+        "about": "We provide domestic and international flight booking, consultancy, hotels, visas, and insurance. Enjoy seamless, affordable travel experiences with us.",
+        "services": [
+            {
+                "title": "Air Ticket Booking",
+                "desc": "Domestic and international tickets with flexible options and competitive fares."
+            },
+            {
+                "title": "Travel Consultancy",
+                "desc": "Personalized itineraries, best times to travel, and hidden-gem recommendations."
+            },
+            {
+                "title": "Hotel Reservations",
+                "desc": "Curated stays from budget to luxury with exclusive partner rates."
+            },
+            {
+                "title": "Visa Assistance",
+                "desc": "End-to-end document support and interview preparation."
+            },
+            {
+                "title": "Travel Insurance",
+                "desc": "Comprehensive coverage for peace of mind wherever you go."
+            }
+        ],
+        "faq": [
+            {
+                "q": "Can I book multi-city trips?",
+                "a": "Absolutely. Use the multi-city option in our search widget to plan complex itineraries."
+            },
+            {
+                "q": "Do you handle visa services?",
+                "a": "Yes, we support documentation, application, and interview preparation."
+            },
+            {
+                "q": "How do I get travel insurance?",
+                "a": "Select insurance during booking or ask our consultants for tailored coverage."
+            }
+        ],
+        "testimonials": [
+            {
+                "name": "Amaka I.",
+                "text": "Smooth booking and excellent support. Highly recommended!",
+                "rating": 5
+            },
+            {
+                "name": "David O.",
+                "text": "Great deals and fast response time. Loved it!",
+                "rating": 4
+            },
+            {
+                "name": "Fatima N.",
+                "text": "Visa guidance was spot on. Thank you!",
+                "rating": 5
+            }
+        ],
+        "destinations": [
+            {
+                "city": "Lagos",
+                "country": "Nigeria",
+                "price": 120,
+                "image": "assets\/images\/destination_lagos.svg"
+            },
+            {
+                "city": "London",
+                "country": "United Kingdom",
+                "price": 620,
+                "image": "assets\/images\/destination_london.svg"
+            },
+            {
+                "city": "Dubai",
+                "country": "UAE",
+                "price": 540,
+                "image": "assets\/images\/destination_dubai.svg"
+            },
+            {
+                "city": "Nairobi",
+                "country": "Kenya",
+                "price": 280,
+                "image": "assets\/images\/destination_nairobi.svg"
+            }
+        ]
+    }
+}

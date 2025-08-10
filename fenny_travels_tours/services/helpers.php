@@ -17,7 +17,7 @@ function json_response($data, int $status = 200): void {
 
 function storage_path(string $relative): string {
     $base = storage_dir();
-    $path = rtrim($base, '/\') . '/' . ltrim($relative, '/\');
+    $path = rtrim($base, '/\\') . '/' . ltrim($relative, '/\\');
     $dir = dirname($path);
     if (!is_dir($dir)) { @mkdir($dir, 0775, true); }
     return $path;
@@ -25,6 +25,5 @@ function storage_path(string $relative): string {
 
 function write_log(string $file, string $message): void {
     $path = storage_path('logs/' . $file);
-    @file_put_contents($path, '[' . date('c') . "] " . $message . "
-", FILE_APPEND);
+    @file_put_contents($path, '[' . date('c') . "] " . $message . "\n", FILE_APPEND);
 }
