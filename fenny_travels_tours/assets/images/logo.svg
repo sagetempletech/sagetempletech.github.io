@@ -1,0 +1,20 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FTT">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#004AAD"/>
+      <stop offset="100%" stop-color="#87CEFA"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grad)"/>
+  <g filter="url(#glow)">
+    <text x="50%" y="45%" text-anchor="middle" font-family="Poppins" font-size="24" fill="#ffffff" opacity="0.95">FTT</text>
+    <text x="50%" y="65%" text-anchor="middle" font-family="Open Sans" font-size="12" fill="#ffffff" opacity="0.85">Fenny Travels &amp; Tours</text>
+  </g>
+</svg>
