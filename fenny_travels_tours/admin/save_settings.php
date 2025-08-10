@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../services/helpers.php';
 session_start(); if (!isset($_SESSION['admin'])) { header('Location: /admin/login.php'); exit; }
 
-if (!is_post()) { redirect('/admin/dashboard.php'); }
+if (!is_post()) { redirect('/admin/settings.php'); }
 
 $section = $_POST['section'] ?? '';
 $opts = read_options();
@@ -20,6 +20,9 @@ switch ($section) {
     $opts['theme']['mode'] = $_POST['mode'] ?? ($opts['theme']['mode'] ?? 'light');
     $opts['theme']['heading_font'] = $_POST['heading_font'] ?? $opts['theme']['heading_font'];
     $opts['theme']['body_font'] = $_POST['body_font'] ?? $opts['theme']['body_font'];
+    // Flight provider + API key
+    $opts['flight']['provider'] = $_POST['provider'] ?? $opts['flight']['provider'];
+    $opts['flight']['api_key'] = $_POST['api_key'] ?? $opts['flight']['api_key'];
     break;
   case 'home':
     $opts['content']['home_hero_title'] = $_POST['home_hero_title'] ?? $opts['content']['home_hero_title'];
@@ -47,4 +50,19 @@ switch ($section) {
 }
 
 save_options($opts);
-redirect('/admin/dashboard.php');
+
+// Redirect to the appropriate settings screen with success flag
+switch ($section) {
+  case 'general':
+    redirect('/admin/settings.php?success=1');
+  case 'home':
+  case 'about':
+  case 'faq':
+  case 'testimonials':
+  case 'destinations':
+    redirect('/admin/content.php?success=1');
+  case 'notifications':
+    redirect('/admin/notifications.php?success=1');
+  default:
+    redirect($_SERVER['HTTP_REFERER'] ?? '/admin/dashboard.php');
+}
